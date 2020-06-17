@@ -29,7 +29,6 @@ app.post("/repositories", (request, response) => {
   return response.json(repository);
 });
 
-//A rota deve alterar apenas o title, a url e as techs do repositório que possua o id igual ao id presente nos parâmetros da rota;
 app.put("/repositories/:id", (request, response) => {
   const {id} = request.params;
   const {title, url, techs} = request.body;
@@ -52,7 +51,6 @@ app.put("/repositories/:id", (request, response) => {
 
 });
 
-//A rota deve deletar o repositório com o id presente nos parâmetros da rota;
 app.delete("/repositories/:id", (request, response) => {
   const {id} = request.params;
 
@@ -67,8 +65,6 @@ app.delete("/repositories/:id", (request, response) => {
 
 });
 
-//A rota deve aumentar o número de likes do repositório específico escolhido através do id presente nos parâmetros da rota, 
-// a cada chamada dessa rota, o número de likes deve ser aumentado em 1;
 app.post("/repositories/:id/like/", (request, response) => {
   const {id} = request.params;
 
